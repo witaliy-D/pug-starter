@@ -1,0 +1,9 @@
+mixin svg(url, id)
+
+  if id
+    svg()&attributes(attributes)
+      use(xlink:href= url + '#' + id)
+  else
+    svg()&attributes(attributes)
+      use(xlink:href= url)
+
