@@ -16,7 +16,6 @@
 
   > span {
     position: relative;
-    // stylelint-disable-line  selector-combinator-blacklist
     display: inline-block;
     width: 100%;
     height: $toggler-part-height;
@@ -50,7 +49,6 @@
   &--close {
     > span {
       background: transparent;
-      // stylelint-disable-line  selector-combinator-blacklist
       transition: background $transition-time 0s;
 
       &:before,
