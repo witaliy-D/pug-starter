@@ -14,8 +14,10 @@
   background-color: #ffffff;
   border: 1px solid $border-color;
   border-radius: $border-radius;
-  -moz-appearance: textfield; // stylelint-disable-line
-  //appearance: textfield; // stylelint-disable-line
+  // stylelint-disable-next-line
+  -moz-appearance: textfield;
+  // stylelint-disable-next-line
+  // appearance: textfield;
 
   &:focus {
     @include field-focus;
@@ -23,7 +25,7 @@
 
   &[disabled],
   &[readonly] {
-    background-color: $gray-lighter;
+    background-color: $lightgray;
     cursor: not-allowed;
   }
 

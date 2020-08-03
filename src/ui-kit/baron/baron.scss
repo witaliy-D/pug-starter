@@ -1,7 +1,6 @@
 // В этом файле должны быть стили для БЭМ-блока baron, его элементов,
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 // Оригинальные темы оформления: https://github.com/Diokuz/baron/blob/master/skins/styles.css
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .baron {
   $block-name: &; // #{$block-name}__element

@@ -31,7 +31,7 @@ mixin btn(text, mods, isInput)
     input.btn(class=allMods, value=text, type='button')&attributes(attributes)
       block
 
-  //- иначе это button
+    //- иначе это button
   else
     button.btn(class=allMods)&attributes(attributes)!= text
       block

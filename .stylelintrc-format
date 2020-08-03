@@ -5,8 +5,7 @@
    ],
   "defaultSeverity": "error",
   "ignoreFiles": [
-    "./src/scss/style.scss",
-    "./src/scss/vendor/*"
+    "./src/scss/style.scss"
   ],
   "plugins": [
     "stylelint-scss",
