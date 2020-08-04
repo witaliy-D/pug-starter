@@ -5,7 +5,7 @@ const dir = config.dir;
 
 
 gulp.task('fonts', () => {
-	return gulp
-		.src([dir.fonts], {base: 'src'})
-		.pipe(gulp.dest(dir.dist));
+  return gulp
+    .src([dir.fonts], {base: 'src'})
+    .pipe(gulp.dest(dir.dist));
 });

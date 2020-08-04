@@ -4,5 +4,5 @@ import gulp from 'gulp';
 import cache from 'gulp-cache';
 
 gulp.task('cacheClear', () => {
-	return cache.clearAll();
+  return cache.clearAll();
 });

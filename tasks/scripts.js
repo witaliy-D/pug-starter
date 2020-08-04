@@ -19,10 +19,10 @@ webpackConfig.devtool = production ? false : 'source-map';
 
 
 gulp.task('scripts', () => {
-	return gulp.src(dir.scripts.src)
-		.pipe(plumber())
-		.pipe(webstream(webpackConfig), webpack)
-		.pipe(gulpif(production, rename({suffix: '.min'})))
-		.pipe(debug({title: 'JS '}))
-		.pipe(gulp.dest(dir.scripts.dist));
+  return gulp.src(dir.scripts.src)
+    .pipe(plumber())
+    .pipe(webstream(webpackConfig), webpack)
+    .pipe(gulpif(production, rename({suffix: '.min'})))
+    .pipe(debug({title: 'JS '}))
+    .pipe(gulp.dest(dir.scripts.dist));
 });

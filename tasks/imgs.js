@@ -11,18 +11,18 @@ const production = !!argv.production;
 const dir = config.dir;
 
 const pluginsSvgo = [
-	{removeViewBox: true},
-	{removeTitle: true}
+  {removeViewBox: true},
+  {removeTitle: true}
 ];
 
 const pluginsImagemin = [
-	imagemin.mozjpeg({progressive: true}),
-	pngquant()
+  imagemin.mozjpeg({progressive: true}),
+  pngquant()
 ];
 
 gulp.task('imgs', () => {
-	return gulp.src(dir.imgs.src)
-		.pipe(imagemin([imagemin.svgo({plugins: pluginsSvgo})]))
-		.pipe(gulpif(production, imagemin(pluginsImagemin)))
-		.pipe(gulp.dest(dir.imgs.dist));
+  return gulp.src(dir.imgs.src)
+    .pipe(imagemin([imagemin.svgo({plugins: pluginsSvgo})]))
+    .pipe(gulpif(production, imagemin(pluginsImagemin)))
+    .pipe(gulp.dest(dir.imgs.dist));
 });

@@ -5,9 +5,9 @@ import config from '../config';
 const dir = config.dir;
 
 gulp.task('gzip', () => {
-	return gulp.src(dir.gzip)
-		.pipe(gulp.dest(dir.dist))
-		.pipe(debug({
-			title: 'GZIP config'
-		}));
+  return gulp.src(dir.gzip)
+    .pipe(gulp.dest(dir.dist))
+    .pipe(debug({
+      title: 'GZIP config'
+    }));
 });

@@ -5,19 +5,19 @@ import config from '../config';
 const dir = config.dir;
 
 gulp.task('clean', () => {
-	return del(dir.dist);
+  return del(dir.dist);
 });
 
 gulp.task('cleanImgs', () => {
-	return del(dir.clean.imgs);
+  return del(dir.clean.imgs);
 });
 
 
 gulp.task('cleanFonts', () => {
-	return del(dir.clean.fonts);
+  return del(dir.clean.fonts);
 });
 
 gulp.task('cleanPages', () => {
-	return del(dir.clean.pages);
+  return del(dir.clean.pages);
 });
 
