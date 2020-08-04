@@ -69,7 +69,8 @@
     "start": "gulp",
     "prod": "gulp prod --production",
     "clear": "gulp cacheClear",
-    "lint": "stylelint src/**/*.scss --fix --config .stylelintrc-format"
+    "lint": "stylelint src/**/*.scss --fix --config .stylelintrc-format",
+    "eslint": "eslint *.js --fix"
   },
   "husky": {
     "hooks": {

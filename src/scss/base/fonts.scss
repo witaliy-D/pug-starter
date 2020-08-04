@@ -27,7 +27,12 @@
   '../fonts/open-sans/opensanslight.woff2'
 );
 
-@include font('Open Sans', normal, 400, '../fonts/open-sans/opensans.woff', '../fonts/open-sans/opensans.woff2');
+@include font(
+  'Open Sans' normal,
+  400,
+  '../fonts/open-sans/opensans.woff',
+  '../fonts/open-sans/opensans.woff2'
+);
 
 @include font(
   'Open Sans',
