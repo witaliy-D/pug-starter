@@ -37,6 +37,12 @@ body {
   -moz-osx-font-smoothing: grayscale; // stylelint-disable-line
 }
 
+.body-lock {
+  position: fixed;
+  width: 100%;
+  overflow-y: scroll;
+}
+
 [tabindex='-1']:focus {
   outline: none !important; // stylelint-disable-line
 }
@@ -69,21 +75,44 @@ h6 {
 //  font-size: $font-size-h1;
 //}
 //
-//h2 {
-//  font-size: $font-size-h2;
-//}
-//
-//h3 {
-//  font-size: $font-size-h3;
-//}
-//
-//h4 {
-//  font-size: $font-size-h4;
-//}
-//
-//h5 {
-//  font-size: $font-size-h5;
-//}
+h2 {
+  font-size: $small-h2;
+  line-height: 32px;
+  font-weight: 300;
+  text-align: center;
+
+  @media (min-width: $screen-md) {
+    font-size: $large-h2;
+    line-height: 50px;
+  }
+
+  @media (min-width: $screen-lg) {
+    font-size: $big-h2;
+    line-height: 60px;
+  }
+}
+
+h3 {
+  font-size: $font-size-h3;
+}
+
+h4 {
+  font-size: $font-size-h4;
+  line-height: 1;
+
+  @media (min-width: $screen-lg) {
+    font-size: $font-size-big;
+    line-height: 30px;
+  }
+}
+
+h5 {
+  font-size: $font-size-h5;
+
+  @media (min-width: $screen-md) {
+    font-size: $font-size;
+  }
+}
 //
 //h6 {
 //  font-size: $font-size-h6;
@@ -91,11 +120,17 @@ h6 {
 
 p {
   // http://clagnut.com/blog/2395
+  font-size: $font-size-sm;
+  line-height: 24px;
   hyphens: auto;
   hyphenate-limit-chars: 6 3 3;
   hyphenate-limit-lines: 2;
   hyphenate-limit-last: always;
   hyphenate-limit-zone: 8%;
+
+  @media (min-width: $screen-md) {
+    font-size: $font-size;
+  }
 }
 
 p,
@@ -149,8 +184,8 @@ sup {
 a {
   //color: $link-color;
   background-color: transparent;
+  outline: none;
   transition: color 0.3s;
-  //outline: none;
 
   // &:hover,
   // &:focus {
@@ -198,6 +233,7 @@ img {
 
 svg {
   fill: currentColor;
+  color: currentColor;
 
   a &,
   button & {
@@ -289,6 +325,10 @@ textarea {
   resize: vertical; // Правильное изменение размеров
 }
 
+input::-ms-clear {
+  display: none;
+}
+
 // dt {
 //   font-weight: 700;
 // }
@@ -315,58 +355,58 @@ textarea {
 //   text-decoration: underline dotted;
 // }
 
-::-webkit-input-placeholder {
-  color: $gray;
-}
+//::-webkit-input-placeholder {
+//  color: $gray;
+//}
+//
+//::-moz-placeholder {
+//  color: $gray;
+//} /* Firefox 19+ */
+//
+//:-moz-placeholder {
+//  color: $gray;
+//} /* Firefox 18- */
+//
+//:-ms-input-placeholder {
+//  color: $gray;
+//}
+//
+//input::-webkit-input-placeholder {
+//  opacity: 1;
+//  transition: opacity $transition-time ease;
+//}
+//
+//input::-moz-placeholder {
+//  opacity: 1;
+//  transition: opacity $transition-time ease;
+//}
+//
+//input:-moz-placeholder {
+//  opacity: 1;
+//  transition: opacity $transition-time ease;
+//}
+//
+//input:-ms-input-placeholder {
+//  opacity: 1;
+//  transition: opacity $transition-time ease;
+//}
 
-::-moz-placeholder {
-  color: $gray;
-} /* Firefox 19+ */
-
-:-moz-placeholder {
-  color: $gray;
-} /* Firefox 18- */
-
-:-ms-input-placeholder {
-  color: $gray;
-}
-
-input::-webkit-input-placeholder {
-  opacity: 1;
-  transition: opacity $transition-time ease;
-}
-
-input::-moz-placeholder {
-  opacity: 1;
-  transition: opacity $transition-time ease;
-}
-
-input:-moz-placeholder {
-  opacity: 1;
-  transition: opacity $transition-time ease;
-}
-
-input:-ms-input-placeholder {
-  opacity: 1;
-  transition: opacity $transition-time ease;
-}
-
-input:focus::-webkit-input-placeholder {
-  opacity: 0;
-  transition: opacity $transition-time ease;
-}
-
-input:focus::-moz-placeholder {
-  opacity: 0;
-  transition: opacity $transition-time ease;
-}
-
-input:focus:-moz-placeholder {
-  opacity: 0;
-  transition: opacity $transition-time ease;
-}
-
-input:focus:-ms-input-placeholder {
-  opacity: 0;
-  transition: opacity $transition-time ease;
-}
+//input:focus::-webkit-input-placeholder {
+//  opacity: 0;
+//  transition: opacity $transition-time ease;
+//}
+//
+//input:focus::-moz-placeholder {
+//  opacity: 0;
+//  transition: opacity $transition-time ease;
+//}
+//
+//input:focus:-moz-placeholder {
+//  opacity: 0;
+//  transition: opacity $transition-time ease;
+//}
+//
+//input:focus:-ms-input-placeholder {
+//  opacity: 0;
+//  transition: opacity $transition-time ease;
+//}

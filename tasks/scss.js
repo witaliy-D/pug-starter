@@ -15,6 +15,7 @@ import rename from 'gulp-rename';
 import debug from 'gulp-debug';
 import server from 'browser-sync';
 import yargs from 'yargs';
+import webpcss from 'webp-in-css/plugin';
 import config from '../config';
 
 const dir = config.dir;
@@ -42,6 +43,7 @@ const cleancssOption = {
 
 // Список и настройки плагинов postCSS
 const postCssPlugins = [
+  webpcss(),
   autoprefixer({grid: true}),
   mqpacker({
     sort: true

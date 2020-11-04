@@ -8,7 +8,7 @@ const config = {
     clean: {
       imgs: [
         'dist/img/**/*',
-        '!dist/img/favicons/',
+        '!dist/img/favicons',
         '!dist/img/symbols.svg',
         '!dist/img/sprite.png'
       ],
@@ -18,16 +18,18 @@ const config = {
     pages: 'src/pages/*.pug',
     pug: [
       'src/pug/**/*.pug',
-      'src/blocks/**/*.pug'
+      '!src/pug/helpers/blocks-mixins.pug'
     ],
+    pugBlocks: 'src/blocks/**/*.pug',
     styles: {
       src: 'src/scss/style.scss',
       dist: 'dist/css/',
       watch: [
         'src/scss/**/*.scss',
-        'src/blocks/**/*.scss'
+        '!src/scss/helpers/blocks-mixins.scss'
       ]
     },
+    stylesBlocks: 'src/blocks/**/*.scss',
     scripts: {
       src: 'src/js/app.js',
       dist: 'dist/js/',
@@ -58,7 +60,7 @@ const config = {
     gzip: 'src/.htaccess',
     copy: 'src/assets/**/*',
     favicons: {
-      src: 'src/img/favicon/*',
+      src: 'src/img/favicon/favicon.png',
       dist: 'dist/img/favicons/'
     }
   }

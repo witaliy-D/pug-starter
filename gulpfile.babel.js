@@ -4,15 +4,26 @@ require('require-dir')('./tasks');
 
 
 gulp.task('default', gulp.series(
-  'clean',
-  gulp.parallel('fonts', 'sprite', 'symbols', 'favicons'),
+  gulp.parallel('clean', 'writePugMixinsFile', 'writeSassImportsFile'),
+  gulp.parallel(
+    'fonts',
+    'sprite',
+    'symbols',
+    'favicons',
+    'webp'
+  ),
   gulp.parallel('imgs', 'pug', 'scss', 'scripts'),
   'serve'
 ));
 
 gulp.task('prod', gulp.series(
-  'clean',
-  gulp.parallel('fonts', 'sprite', 'symbols', 'favicons'),
-  gulp.parallel('imgs', 'pug', 'scss', 'scripts', 'gzip', 'copy')
+  gulp.parallel('clean', 'writePugMixinsFile', 'writeSassImportsFile'),
+  gulp.parallel(
+    'fonts',
+    'sprite',
+    'symbols',
+    'favicons',
+    'webp'
+  ),
+  gulp.parallel('imgs', 'pug', 'scss', 'scripts')
 ));
-

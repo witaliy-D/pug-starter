@@ -7,3 +7,30 @@ mixin svg(url, id)
     svg()&attributes(attributes)
       use(xlink:href= url)
 
+mixin picture(props)
+
+  picture
+    if props.desktopwebp && props.desktop2xwebp
+      source(media='(min-width: 1000px)', type='image/webp', srcset=`${props.desktop2xwebp} 2x, ${props.desktopwebp} 1x`)
+    if props.desktop && props.desktop2x
+      source(media='(min-width: 1000px)', srcset=`${props.desktop2x} 2x, ${props.desktop} 1x`)
+    if props.tabletwebp && props.tablet2xwebp
+      source(media='(min-width: 660px)', type='image/webp', srcset=`${props.tablet2xwebp} 2x, ${props.tabletwebp} 1x`)
+    if props.tablet && props.tablet2x
+      source(media='(min-width: 660px)', srcset=`${props.tablet2x} 2x, ${props.tablet} 1x`)
+    if props.imgwebp && props.img2xwebp
+      source(type='image/webp', srcset=`${props.img2xwebp} 2x, ${props.imgwebp} 1x`)
+    if props.img && props.img2x
+      source(media='(min-width: 320px)', srcset=`${props.img2x} 2x, ${props.img} 1x`)
+    if props.desktopwebp
+      source(media='(min-width: 1000px)', type='image/webp', srcset=`${props.desktopwebp}`)
+    if props.desktop
+      source(media='(min-width: 1000px)', srcset=`${props.desktop}`)
+    if props.tabletwebp
+      source(media='(min-width: 660px)', type='image/webp', srcset=`${props.tabletwebp}`)
+    if props.tablet
+      source(media='(min-width: 660px)', srcset=`${props.tablet}`)
+    if props.imgwebp
+      source(type='image/webp', srcset=`${props.imgwebp}`)
+
+    img(src=props.img, alt=props.alt)

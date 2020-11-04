@@ -1,0 +1,56 @@
+@mixin clearfix() {
+  // stylelint-disable-next-line
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+//@mixin container-fluid() {
+//  width: 88%;
+//  max-width: 940px;
+//  margin: 0 auto;
+//}
+
+@mixin btn() {
+  display: inline-block;
+  font-family: $font-family;
+  font-size: 17px;
+  line-height: 25px;
+  font-weight: 600;
+  padding: 18px 42px;
+  text-align: center;
+  vertical-align: top;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: $text-color;
+  background-color: $pink;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+
+@mixin container() {
+  width: 100%;
+  max-width: $container-max-widths;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: ($fields);
+  padding-left: ($fields);
+}
+
+//@mixin containe() {
+//  width: 280px;
+//  margin: 0 auto;
+//
+//  @media (min-width: $screen-md) {
+//    width: 620px;
+//  }
+//
+//  @media (min-width: $screen-lg) {
+//    width: 940px;
+//  }
+//}

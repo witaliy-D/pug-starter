@@ -1,5 +1,4 @@
 {
-	"disallowClassLiteralsBeforeIdLiterals": true,
 	"disallowDuplicateAttributes": true,
 	"disallowMultipleLineBreaks": true,
 	"requireClassLiteralsBeforeAttributes": true,
@@ -8,5 +7,6 @@
 	"requireLowerCaseTags": true,
 	"requireStrictEqualityOperators": true,
 	"validateDivTags": true,
-	"validateIndentation": "\t"
+	"validateIndentation": 2,
+  "validateAttributeQuoteMarks": "'"
 }

@@ -2,7 +2,8 @@
   "syntax": "scss",
   "defaultSeverity": "error",
   "ignoreFiles": [
-    "./src/scss/style.scss"
+    "./src/scss/style.scss",
+    "./src/scss/helpers/mixins/smart-grid-mixins.scss"
   ],
   "plugins": [
     "stylelint-scss",
@@ -53,7 +54,7 @@
         "message": "В @-правилах пробел перед символом ; недопустим"
       }
     ],
-    "at-rule-blacklist": [
+    "at-rule-disallowed-list": [
       ["extend"],
       {
       "message": "это @-правило в чёрном списке"
@@ -103,23 +104,22 @@
         "message": "Применяйте !important с осторожностью"
       }
     ],
-    "declaration-property-unit-blacklist": [
+    "declaration-property-unit-disallowed-list": [
       {
         "font-size": ["pt"],
-        "/^animation/": ["ms"],
-        "/^padding/": ["%"]
+        "/^animation/": ["ms"]
       },
       {
         "message": "Для этого свойства данные единицы измерения в чёрном списке"
       }
     ],
-    "unit-blacklist": [
+    "unit-disallowed-list": [
       ["mm","cm","in","pc"],
       {
         "message": "Эти единицы измерения запрещены"
       }
     ],
-    "declaration-property-value-blacklist": {
+    "declaration-property-value-disallowed-list": {
       "/^margin/": [
         "initial"
       ],
@@ -280,7 +280,7 @@
         "message": "Свойства с вендорными префиксами использовать не следует"
       }
     ],
-    "property-blacklist": [
+    "property-disallowed-list": [
       ["text-rendering" ],
       {
         "message": "Свойство из чёрного списка"
@@ -323,7 +323,7 @@
         "message": "В селекторе атрибута должны быть кавычки"
       }
     ],
-    "selector-attribute-operator-blacklist": [
+    "selector-attribute-operator-disallowed-list": [
       [
         "id"
       ],

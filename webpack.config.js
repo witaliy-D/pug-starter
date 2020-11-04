@@ -5,7 +5,7 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
 
   entry: {
-    app: './js/app.js',
+    // app: './js/app.js',
     index: './js/pageEntry/index.js',
     page: './js/pageEntry/page.js'
   },
@@ -26,7 +26,9 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        use: {
+          loader: 'babel-loader'
+        }
       }
     ]
   },

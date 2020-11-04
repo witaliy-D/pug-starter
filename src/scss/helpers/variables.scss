@@ -1,4 +1,4 @@
-// Базовые цвета https://colorscheme.ru/color-converbbter.html
+// Базовые цвета https://colorscheme.ru/color-converter.html
 
 //$gray-darkest: hsl(0, 0%, 10%);
 //$gray-darker: hsl(0, 0%, 20%);
@@ -33,18 +33,20 @@ $color-gh: #24292e;
 $black: #000000;
 $white: #ffffff;
 $lightgray: #f2f2f2;
-$darkblue: #283645;
-$silver: rgba(40, 54, 69, 0.3);
-$blue-down: #1d2631;
+$blue: #283645;
+$darkblue: #1d2631;
+$blue-down: rgb(96, 160, 227);
 $pink: #d22856;
 $pink-down: rgba(210, 40, 86, 0.3);
 $transparency: rgba(0, 0, 0, 0.3);
+
+$silver: rgba(40, 54, 69, 0.3);
 $gray: #e5e5e5;
 $poverblue: #b0e0e6;
 
 // Семантические цвета
 
-$text-color: $darkblue;
+$text-color: $blue;
 $text-color-muted: $gray;
 $body-bg: $white;
 
@@ -56,17 +58,22 @@ $border-color: $gray;
 // Базовая типографика
 
 $font-size: 18px;
+$font-size-sm: 14px; // 12px от 16px
+$font-size-big: 24px;
+$line-height: 30px;
+
+$big-h2: 50px;
+$large-h2: 40px;
+$small-h2: 24px;
 
 $font-size-h1: 40px;
 $font-size-h2: 32px;
-$font-size-h3: 24px;
+$font-size-h3: 30px;
 $font-size-h4: 18px;
-$font-size-h5: 16px;
-$font-size-h6: 16px;
+$font-size-h5: 14px;
+// $font-size-h6: 16px;
 
-$font-size-sm: 14px; // 12px от 16px
-$line-height: 30px;
-$typo-margin-vertical: 16px;
+$typo-margin-vertical: 15px;
 
 //$font-family: -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', 'Ubuntu', 'Droid Sans', Arial, sans-serif,
 //  'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
@@ -75,40 +82,42 @@ $font-family: 'Open Sans', Arial, sans-serif;
 
 // Ширины
 
-$screen-xs: 0;
-$screen-sm: 480px;
-$screen-md: 768px;
-$screen-lg: 992px;
-$screen-xl: 1200px;
-$screen-xxl: 1800px;
+//$screen-xs: 0;
+//$screen-sm: 480px;
+$screen-md: 660px;
+$screen-lg: 1000px;
+//$screen-xl: 1200px;
+//$screen-xxl: 1200px;
 
-$container-sm: 100%;
-$container-md: 100%;
-$container-lg: $screen-lg - 30;
-$container-xl: $screen-xl - 30;
+//$container-sm: 100%;
+//$container-md: 100%;
+//$container-lg: ($screen-lg - 20);
+//$container-lg: $screen-lg - 30;
+//$container-xl: ($screen-lg - 20);
 //$container-xxl: $screen-xxl - 30;
-$container-xxl: $screen-xl - 30;
+//$container-xxl: ($screen-lg - 20);
+$container-max-widths: 980px;
 
 // Модульная сетка
 
 $grid-columns: 12;
-$grid-gutter-width: 30px;
-
+$grid-gutter-width: 20px;
+$fields: 20px;
 // Разное
 
-$field-padding-vertical: 5px;
-$field-padding-horizontal: 12px;
+$field-padding-vertical: 17.5px;
+$field-padding-horizontal: 20px;
 
 $border-radius: 3px;
 $opacity: 0.7;
 $transition-time: 0.3s;
 $shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.3);
 
-$menu-desktop-width: $screen-md;
-$toggler-part-height: 3px;
+$menu-desktop-width: $screen-lg;
+$toggler-part-height: 5px;
 $toggler-part-bg-color: #000000;
 
 $z-index-modal: 1000;
 $device-width: device-width;
 
-// $retina: '(min-resolution: 144dpi), (min-resolution: 1.5dppx)';
+$retina: '(min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2)';

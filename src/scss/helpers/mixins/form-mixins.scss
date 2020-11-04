@@ -3,24 +3,31 @@
 @mixin field-text {
   display: inline-block;
   width: 100%;
-  // stylelint-disable-next-line
-  min-height: calc(#{$line-height}em + #{$field-padding-vertical} + #{$field-padding-vertical} + 2px);
+  height: calc(#{$line-height} + #{$field-padding-vertical} + #{$field-padding-vertical});
   font-family: inherit;
-  font-size: 1em;
+  font-size: 18px;
   line-height: $line-height;
   margin: 0;
   padding: $field-padding-vertical $field-padding-horizontal;
   vertical-align: middle;
   background-color: #ffffff;
-  border: 1px solid $border-color;
-  border-radius: $border-radius;
+  border: 2px solid $border-color;
+  border-radius: 0;
   // stylelint-disable-next-line
   -moz-appearance: textfield;
   // stylelint-disable-next-line
-  // appearance: textfield;
+  //appearance: textfield;
+
+  &:hover {
+    @include field-focus;
+
+    border: 2px solid $blue;
+  }
 
   &:focus {
     @include field-focus;
+
+    border: 2px solid $pink;
   }
 
   &[disabled],
@@ -47,11 +54,15 @@
 }
 
 @mixin field-help-text {
+  position: absolute;
   display: block;
+  //left: 50%;
+  width: 100%;
   font-size: $font-size-sm;
-  line-height: 1.2em;
-  padding-top: 0.4em;
-  color: $text-color-muted;
+  line-height: 1;
+  //transform: translateX(-50%);
+  text-align: center;
+  color: $pink;
 
   &:empty {
     display: none;
@@ -59,13 +70,13 @@
 }
 
 @mixin field-focus {
-  outline: 0;
-  box-shadow: 0 0 0 2px rgba($color-main, $opacity);
+  outline: none;
+  box-shadow: none;
 }
 
 @mixin field-name {
-  display: block;
+  display: inline-block;
   line-height: $line-height;
-  font-weight: 700;
-  margin-bottom: 0.4em;
+  font-weight: 400;
+  margin-bottom: 5px;
 }

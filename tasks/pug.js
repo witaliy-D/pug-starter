@@ -7,6 +7,8 @@ import replace from 'gulp-replace';
 import debug from 'gulp-debug';
 import yargs from 'yargs';
 import config from '../config';
+import pugLinter from 'gulp-pug-linter';
+
 
 const dir = config.dir;
 
@@ -38,3 +40,26 @@ gulp.task('pug', () => {
     .pipe(debug({title: 'pug'}))
     .pipe(gulp.dest(dir.dist));
 });
+
+
+gulp.task('pugFast', () => {
+  return gulp.src(dir.pages, {since: gulp.lastRun('pugFast')})
+    .pipe(plumber({
+      errorHandler(err) {
+        console.log(err.message);
+        this.emit('end');
+      }
+    }))
+    .pipe(pug())
+    .pipe(prettyHtml(prettyOption))
+    .pipe(gulpif(production, replace('.css', '.min.css')))
+    .pipe(gulpif(production, replace('.js', '.min.js')))
+    .pipe(debug({title: 'pug'}))
+    .pipe(gulp.dest('dist'));
+});
+
+gulp.task('pugLint', () => (
+  gulp
+    .src('src/**/*.pug')
+    .pipe(pugLinter({reporter: 'default'}))
+));
