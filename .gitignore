@@ -1,6 +1,7 @@
 .DS_Store
 .idea
 .vscode
+.npmrc
 *.ai
 *.log
 *.pdf
@@ -10,3 +11,4 @@ node_modules/
 package-lock.json
 Thumbs.db
 dist/
+faviconData.json
