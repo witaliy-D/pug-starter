@@ -4,7 +4,7 @@
 .nav-menu {
   $block-name: &; // #{$block-name}__element
 
-  @include container();
+  @include container-fluid();
 
   position: relative;
   display: flex;

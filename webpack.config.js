@@ -5,9 +5,9 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
 
   entry: {
-    // app: './js/app.js',
-    index: './js/pageEntry/index.js',
-    page: './js/pageEntry/page.js'
+    app: './js/app.js'
+    // index: './js/pageEntry/index.js',
+    // page: './js/pageEntry/page.js'
   },
 
   output: {

@@ -3,15 +3,17 @@ extends ../pug/layouts/default
 block variables
   -
     var title = 'Главная';
-    var selectedID = '1';
-    var page = 'index';
+    // var selectedID = '1';
+    // var page = 'index';
 
 block links
-  //meta(name="theme-color" content="#fff")
+  //-meta(name="theme-color" content="#fff")
   //-meta(name="apple-mobile-web-app-status-bar-style" content="black-translucent")
 
 block content
+  h1 название
 block scripts
-  script(src='js/vendors~index~page.js')
-  script(src='js/vendors~index.js')
-  script(src='js/index.js')
+  script(src='js/app.js')
+  //-script(src='js/vendors~index~page.js')
+  //-script(src='js/vendors~index.js')
+  //-script(src='js/index.js')

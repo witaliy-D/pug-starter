@@ -9,27 +9,40 @@ mixin svg(url, id)
 
 mixin picture(props)
 
+  -
+    var screenMd = '768px';
+    var screenLg = '992px';
+    var screenXl = '1200px';
+
   picture
-    if props.desktopwebp && props.desktop2xwebp
-      source(media='(min-width: 1000px)', type='image/webp', srcset=`${props.desktop2xwebp} 2x, ${props.desktopwebp} 1x`)
-    if props.desktop && props.desktop2x
-      source(media='(min-width: 1000px)', srcset=`${props.desktop2x} 2x, ${props.desktop} 1x`)
-    if props.tabletwebp && props.tablet2xwebp
-      source(media='(min-width: 660px)', type='image/webp', srcset=`${props.tablet2xwebp} 2x, ${props.tabletwebp} 1x`)
-    if props.tablet && props.tablet2x
-      source(media='(min-width: 660px)', srcset=`${props.tablet2x} 2x, ${props.tablet} 1x`)
+    if props.imgxlwebp && props.imgxl2xwebp
+      source(media=`(min-width: ${screenXl})`, type='image/webp', srcset=`${props.imgxl2xwebp} 2x, ${props.imgxlwebp} 1x`)
+    if props.imgxl && props.imgxl2x
+      source(media=`(min-width: ${screenXl})`, srcset=`${props.imgxl2x} 2x, ${props.imgxl} 1x`)
+    if props.imglgwebp && props.imglg2xwebp
+      source(media=`(min-width: ${screenLg})`, type='image/webp', srcset=`${props.imglg2xwebp} 2x, ${props.imglgwebp} 1x`)
+    if props.imglg && props.imglg2x
+      source(media=`(min-width: ${screenLg})`, srcset=`${props.imglg2x} 2x, ${props.imglg} 1x`)
+    if props.imgmdwebp && props.imgmd2xwebp
+      source(media=`(min-width: ${screenMd})`, type='image/webp', srcset=`${props.imgmd2xwebp} 2x, ${props.imgmdwebp} 1x`)
+    if props.imgmd && props.imgmd2x
+      source(media=`(min-width: ${screenMd})`, srcset=`${props.imgmd2x} 2x, ${props.imgmd} 1x`)
     if props.imgwebp && props.img2xwebp
       source(type='image/webp', srcset=`${props.img2xwebp} 2x, ${props.imgwebp} 1x`)
     if props.img && props.img2x
       source(media='(min-width: 320px)', srcset=`${props.img2x} 2x, ${props.img} 1x`)
-    if props.desktopwebp
-      source(media='(min-width: 1000px)', type='image/webp', srcset=`${props.desktopwebp}`)
-    if props.desktop
-      source(media='(min-width: 1000px)', srcset=`${props.desktop}`)
-    if props.tabletwebp
-      source(media='(min-width: 660px)', type='image/webp', srcset=`${props.tabletwebp}`)
-    if props.tablet
-      source(media='(min-width: 660px)', srcset=`${props.tablet}`)
+    if props.imgxlwebp
+      source(media=`(min-width: ${screenXl})`, type='image/webp', srcset=`${props.imgxlwebp}`)
+    if props.imgxl
+      source(media=`(min-width: ${screenXl})`, srcset=`${props.imgxl}`)
+    if props.imglgwebp
+      source(media=`(min-width: ${screenLg})`, type='image/webp', srcset=`${props.imglgwebp}`)
+    if props.imglg
+      source(media=`(min-width: ${screenLg})`, srcset=`${props.imglg}`)
+    if props.imgmdwebp
+      source(media=`(min-width: ${screenMd})`, type='image/webp', srcset=`${props.imgmdwebp}`)
+    if props.imgmd
+      source(media=`(min-width: ${screenMd})`, srcset=`${props.imgmd}`)
     if props.imgwebp
       source(type='image/webp', srcset=`${props.imgwebp}`)
 

@@ -6,12 +6,21 @@ block variables
 doctype html
 html.page(lang='ru')
   head
-    include ../modules/head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    title #{title}
+    //-include ../modules/head
+    link(rel='preload' href='fonts/open-sans/opensanslight.woff2' as='font' crossorigin='anonymous')
+    link(rel='preload' href='fonts/open-sans/opensans.woff2' as='font' crossorigin='anonymous')
+    link(rel='preload' href='fonts/open-sans/opensansbold.woff2' as='font' crossorigin='anonymous')
+    link(href='css/style.css' rel='stylesheet')
     block links
   body.page__inner
-    header.page-header
-      include ../modules/nav
+    //-header.page-header
+    //-  include ../modules/nav
+
     main.page__content
       block content
-    footer.page__footer-wrapper
+    //-footer.page__footer-wrapper
     block scripts

@@ -32,21 +32,10 @@ $color-gh: #24292e;
 
 $black: #000000;
 $white: #ffffff;
-$lightgray: #f2f2f2;
-$blue: #283645;
-$darkblue: #1d2631;
-$blue-down: rgb(96, 160, 227);
-$pink: #d22856;
-$pink-down: rgba(210, 40, 86, 0.3);
-$transparency: rgba(0, 0, 0, 0.3);
-
-$silver: rgba(40, 54, 69, 0.3);
-$gray: #e5e5e5;
-$poverblue: #b0e0e6;
 
 // Семантические цвета
 
-$text-color: $blue;
+$text-color: $black;
 $text-color-muted: $gray;
 $body-bg: $white;
 
@@ -78,25 +67,20 @@ $typo-margin-vertical: 15px;
 //$font-family: -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', 'Ubuntu', 'Droid Sans', Arial, sans-serif,
 //  'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 $font-family: 'Open Sans', Arial, sans-serif;
-//$font-family--monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+$font-family--monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 
 // Ширины
 
 //$screen-xs: 0;
 //$screen-sm: 480px;
-$screen-md: 660px;
-$screen-lg: 1000px;
-//$screen-xl: 1200px;
-//$screen-xxl: 1200px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+//$screen-xxl: 1800px;
 
-//$container-sm: 100%;
-//$container-md: 100%;
-//$container-lg: ($screen-lg - 20);
-//$container-lg: $screen-lg - 30;
-//$container-xl: ($screen-lg - 20);
-//$container-xxl: $screen-xxl - 30;
-//$container-xxl: ($screen-lg - 20);
 $container-max-widths: 980px;
+
+$menu-desktop-width: $screen-lg;
 
 // Модульная сетка
 
@@ -113,7 +97,6 @@ $opacity: 0.7;
 $transition-time: 0.3s;
 $shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.3);
 
-$menu-desktop-width: $screen-lg;
 $toggler-part-height: 5px;
 $toggler-part-bg-color: #000000;
 

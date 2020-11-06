@@ -75,44 +75,44 @@ h6 {
 //  font-size: $font-size-h1;
 //}
 //
-h2 {
-  font-size: $small-h2;
-  line-height: 32px;
-  font-weight: 300;
-  text-align: center;
-
-  @media (min-width: $screen-md) {
-    font-size: $large-h2;
-    line-height: 50px;
-  }
-
-  @media (min-width: $screen-lg) {
-    font-size: $big-h2;
-    line-height: 60px;
-  }
-}
-
-h3 {
-  font-size: $font-size-h3;
-}
-
-h4 {
-  font-size: $font-size-h4;
-  line-height: 1;
-
-  @media (min-width: $screen-lg) {
-    font-size: $font-size-big;
-    line-height: 30px;
-  }
-}
-
-h5 {
-  font-size: $font-size-h5;
-
-  @media (min-width: $screen-md) {
-    font-size: $font-size;
-  }
-}
+//h2 {
+//  font-size: $small-h2;
+//  line-height: 32px;
+//  font-weight: 300;
+//  text-align: center;
+//
+//  @media (min-width: $screen-md) {
+//    font-size: $large-h2;
+//    line-height: 50px;
+//  }
+//
+//  @media (min-width: $screen-lg) {
+//    font-size: $big-h2;
+//    line-height: 60px;
+//  }
+//}
+//
+//h3 {
+//  font-size: $font-size-h3;
+//}
+//
+//h4 {
+//  font-size: $font-size-h4;
+//  line-height: 1;
+//
+//  @media (min-width: $screen-lg) {
+//    font-size: $font-size-big;
+//    line-height: 30px;
+//  }
+//}
+//
+//h5 {
+//  font-size: $font-size-h5;
+//
+//  @media (min-width: $screen-md) {
+//    font-size: $font-size;
+//  }
+//}
 //
 //h6 {
 //  font-size: $font-size-h6;
@@ -120,17 +120,17 @@ h5 {
 
 p {
   // http://clagnut.com/blog/2395
-  font-size: $font-size-sm;
-  line-height: 24px;
+  //font-size: $font-size-sm;
+  //line-height: 24px;
   hyphens: auto;
   hyphenate-limit-chars: 6 3 3;
   hyphenate-limit-lines: 2;
   hyphenate-limit-last: always;
   hyphenate-limit-zone: 8%;
 
-  @media (min-width: $screen-md) {
-    font-size: $font-size;
-  }
+  //@media (min-width: $screen-md) {
+  //  font-size: $font-size;
+  //}
 }
 
 p,

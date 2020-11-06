@@ -21,18 +21,18 @@
   &:hover {
     @include field-focus;
 
-    border: 2px solid $blue;
+    border: 2px solid $border-color;
   }
 
   &:focus {
     @include field-focus;
 
-    border: 2px solid $pink;
+    border: 2px solid $border-color;
   }
 
   &[disabled],
   &[readonly] {
-    background-color: $lightgray;
+    background-color: $gray;
     cursor: not-allowed;
   }
 
@@ -62,7 +62,7 @@
   line-height: 1;
   //transform: translateX(-50%);
   text-align: center;
-  color: $pink;
+  color: $text-color-muted;
 
   &:empty {
     display: none;

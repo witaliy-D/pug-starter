@@ -9,8 +9,8 @@ gulp.task('default', gulp.series(
     'fonts',
     'sprite',
     'symbols',
-    'favicons',
-    'webp'
+    // 'favicons',
+    // 'webp'
   ),
   gulp.parallel('imgs', 'pug', 'scss', 'scripts'),
   'serve'
@@ -22,8 +22,15 @@ gulp.task('prod', gulp.series(
     'fonts',
     'sprite',
     'symbols',
-    'favicons',
-    'webp'
+    // 'favicons',
+    // 'webp'
   ),
-  gulp.parallel('imgs', 'pug', 'scss', 'scripts')
+  gulp.parallel(
+    'imgs',
+    'pug',
+    'scss',
+    'scripts'
+    // 'gzip',
+    // 'copy'
+  )
 ));
