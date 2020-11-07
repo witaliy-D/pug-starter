@@ -9,8 +9,9 @@
 
 //@mixin container-fluid() {
 //  width: 88%;
-//  max-width: 940px;
-//  margin: 0 auto;
+//  max-width: $container-max-widths;
+//  margin-right: auto;
+//  margin-left: auto;
 //}
 
 @mixin container-fluid() {
@@ -18,8 +19,8 @@
   max-width: $container-max-widths;
   margin-right: auto;
   margin-left: auto;
-  padding-right: ($fields);
-  padding-left: ($fields);
+  padding-right: $fields;
+  padding-left: $fields;
 }
 
 @mixin container() {
@@ -27,9 +28,9 @@
   margin-right: auto;
   margin-left: auto;
 
-  @media (min-width: $screen-sm) {
-    width: 440px;
-  }
+  //@media (min-width: $screen-sm) {
+  //  width: 440px;
+  //}
 
   @media (min-width: $screen-md) {
     width: 720px;
@@ -43,9 +44,9 @@
     width: 1100px;
   }
 
-  @media (min-width: $screen-xxl) {
-    width: 1400px;
-  }
+  //@media (min-width: $screen-xxl) {
+  //  width: 1400px;
+  //}
 }
 
 @mixin btn() {

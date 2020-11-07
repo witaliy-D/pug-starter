@@ -36,4 +36,6 @@ gulp.task('serve', () => {
 
   gulp.watch(dir.fonts, {events: ['unlink']}, gulp.series('cleanFonts', 'fonts', reload));
   gulp.watch(dir.fonts, {events: ['add']}, gulp.series('fonts', reload));
+
+  gulp.watch(dir.breakpoints, gulp.series(gulp.parallel('smartGrid', 'scripts', 'pug'), 'scss', reload));
 });

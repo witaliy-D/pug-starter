@@ -26,7 +26,8 @@ const config = {
       dist: 'dist/css/',
       watch: [
         'src/scss/**/*.scss',
-        '!src/scss/helpers/blocks-mixins.scss'
+        '!src/scss/helpers/blocks-mixins.scss',
+        '!src/scss/helpers/mixins/smart-grid-mixins.scss'
       ]
     },
     stylesBlocks: 'src/blocks/**/*.scss',
@@ -62,7 +63,8 @@ const config = {
     favicons: {
       src: 'src/img/favicon/favicon.png',
       dist: 'dist/img/favicons/'
-    }
+    },
+    breakpoints: 'breakpoints.json'
   }
 };
 

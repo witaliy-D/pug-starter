@@ -6,9 +6,10 @@
 //@import "custom.scss";                                 // закоментировать если не нужен
 //@import "node_modules/bootstrap/scss/bootstrap";       // закоментировать если не нужен
 
-
-
 //@import "vendor/bootstrap";
+
+
+@import '../../breakpoints.json';
 
 @import "helpers/variables";
 @import "helpers/mixins";
@@ -20,3 +21,4 @@
 //@import "base/print";
 
 @import "helpers/blocks-mixins";
+

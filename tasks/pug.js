@@ -8,6 +8,8 @@ import debug from 'gulp-debug';
 import yargs from 'yargs';
 import config from '../config';
 import pugLinter from 'gulp-pug-linter';
+import data from 'gulp-data';
+import fs from 'fs';
 
 
 const dir = config.dir;
@@ -33,6 +35,9 @@ gulp.task('pug', () => {
         this.emit('end');
       }
     }))
+    .pipe(data(function () {
+      return JSON.parse(fs.readFileSync(dir.breakpoints));
+    }))
     .pipe(pug())
     .pipe(prettyHtml(prettyOption))
     .pipe(gulpif(production, replace('.css', '.min.css')))
@@ -49,6 +54,9 @@ gulp.task('pugFast', () => {
         console.log(err.message);
         this.emit('end');
       }
+    }))
+    .pipe(data(function () {
+      return JSON.parse(fs.readFileSync(dir.breakpoints));
     }))
     .pipe(pug())
     .pipe(prettyHtml(prettyOption))

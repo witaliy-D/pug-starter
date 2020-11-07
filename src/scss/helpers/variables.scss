@@ -71,22 +71,19 @@ $font-family--monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mo
 
 // Ширины
 
-//$screen-xs: 0;
-//$screen-sm: 480px;
-$screen-md: 768px;
-$screen-lg: 992px;
-$screen-xl: 1200px;
-//$screen-xxl: 1800px;
+//$screen-sm: $sm + px;  // настройки в breakpoints.json
+$screen-md: $md + px; // настройки в breakpoints.json
+$screen-lg: $lg + px; // настройки в breakpoints.json
+$screen-xl: $xl + px; // настройки в breakpoints.json
+//$screen-xxl: $xxl + px; // настройки в breakpoints.json
 
-$container-max-widths: 980px;
+$container-max-widths: $containerMax + px; // настройки в breakpoints.json
+$grid-gutter-width: $gridGutter + px; // настройки в breakpoints.json
+$fields: $fields + px; // настройки в breakpoints.json
 
 $menu-desktop-width: $screen-lg;
-
-// Модульная сетка
-
 $grid-columns: 12;
-$grid-gutter-width: 20px;
-$fields: 20px;
+
 // Разное
 
 $field-padding-vertical: 17.5px;

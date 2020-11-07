@@ -17,6 +17,7 @@ import server from 'browser-sync';
 import yargs from 'yargs';
 import webpcss from 'webp-in-css/plugin';
 import config from '../config';
+import sassImportJson from 'gulp-sass-import-json';
 
 const dir = config.dir;
 
@@ -65,6 +66,7 @@ gulp.task('scss', () => {
   };
   return gulp.src(dir.styles.src)
     .pipe(plumber({errorHandler: onError}))
+    .pipe(sassImportJson({isScss: true, cache: false}))
     .pipe(gulpif(!production, sourcemaps.init()))
     .pipe(sass({outputStyle: 'expanded'}))
     .pipe(postcss(postCssPlugins))

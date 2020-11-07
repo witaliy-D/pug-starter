@@ -6,11 +6,12 @@ require('require-dir')('./tasks');
 gulp.task('default', gulp.series(
   gulp.parallel('clean', 'writePugMixinsFile', 'writeSassImportsFile'),
   gulp.parallel(
+    'smartGrid',
     'fonts',
     'sprite',
     'symbols',
     // 'favicons',
-    // 'webp'
+    'webp'
   ),
   gulp.parallel('imgs', 'pug', 'scss', 'scripts'),
   'serve'
@@ -19,11 +20,12 @@ gulp.task('default', gulp.series(
 gulp.task('prod', gulp.series(
   gulp.parallel('clean', 'writePugMixinsFile', 'writeSassImportsFile'),
   gulp.parallel(
+    'smartGrid',
     'fonts',
     'sprite',
     'symbols',
     // 'favicons',
-    // 'webp'
+    'webp'
   ),
   gulp.parallel(
     'imgs',
