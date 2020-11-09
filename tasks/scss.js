@@ -66,6 +66,29 @@ gulp.task('scss', () => {
   };
   return gulp.src(dir.styles.src)
     .pipe(plumber({errorHandler: onError}))
+    .pipe(sassImportJson({isScss: true}))
+    .pipe(gulpif(!production, sourcemaps.init()))
+    .pipe(sass({outputStyle: 'expanded'}))
+    .pipe(postcss(postCssPlugins))
+    .pipe(gulpif(production, cleancss(cleancssOption)))
+    .pipe(gulpif(production, rename({suffix: '.min'})))
+    .pipe(gulpif(!production, sourcemaps.write('.')))
+    .pipe(debug({title: 'scss'}))
+    .pipe(gulp.dest(dir.styles.dist))
+    .pipe(server.stream());
+});
+
+gulp.task('scssGridReset', () => {
+  const onError = function (err) {
+    notify.onError({
+      title: 'Error in scss task',
+      message: 'Error: <%= error.message %>',
+      sound: 'Beep'
+    })(err);
+    this.emit('end');
+  };
+  return gulp.src(dir.styles.src)
+    .pipe(plumber({errorHandler: onError}))
     .pipe(sassImportJson({isScss: true, cache: false}))
     .pipe(gulpif(!production, sourcemaps.init()))
     .pipe(sass({outputStyle: 'expanded'}))
