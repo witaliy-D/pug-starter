@@ -1,0 +1,44 @@
+// font-weight helper:
+
+// 100 Extra Light or Ultra Light;
+// 200 Light or Thin;
+// 300 Book or Demi;
+// 400 Regular or Normal;
+// 500 Medium;
+// 600 Semibold or Demibold;
+// 700 Bold;
+// 800 Black or Extra Bold or Heavy;
+// 900 Extra Black or Fat or Ultra Black
+
+@mixin font($f-name, $f-style, $f-weight, $f-url, $f-url-2) {
+  @font-face {
+    font-family: $f-name;
+    font-weight: $f-weight;
+    font-style: $f-style;
+    src: url($f-url) format('woff'), url($f-url-2) format('woff2');
+  }
+}
+
+@include font(
+  'Open Sans',
+  normal,
+  200,
+  '../fonts/open-sans/opensanslight.woff',
+  '../fonts/open-sans/opensanslight.woff2'
+);
+
+@include font(
+  'Open Sans',
+  normal,
+  400,
+  '../fonts/open-sans/opensans.woff',
+  '../fonts/open-sans/opensans.woff2'
+);
+
+@include font(
+  'Open Sans',
+  normal,
+  700,
+  '../fonts/open-sans/opensansbold.woff',
+  '../fonts/open-sans/opensansbold.woff2'
+);

@@ -1,0 +1,37 @@
+// В этом файле должны быть стили для БЭМ-блока nav-menu, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+
+.nav-menu {
+  $block-name: &; // #{$block-name}__element
+
+  @include container-fluid();
+
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &__toggle {
+    outline: none;
+
+    @media (min-width: $menu-desktop-width) {
+      display: none;
+    }
+  }
+
+  &__list {
+    @media (max-width: ($menu-desktop-width - 0.1)) {
+      position: absolute;
+      display: block;
+      top: 30px;
+      left: -1000px;
+      width: 100%;
+      background-color: #ffffff;
+      transition: left $transition-time;
+
+      #{$block-name}--open & {
+        left: 0;
+      }
+    }
+  }
+}

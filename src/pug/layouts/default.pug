@@ -1,0 +1,30 @@
+include ../helpers/mixins
+include ../helpers/blocks-mixins
+
+block variables
+
+doctype html
+html.page(lang='ru')
+  head
+    head
+      meta(charset='utf-8')
+      meta(name='viewport' content='width=device-width, initial-scale=1')
+      meta(http-equiv='X-UA-Compatible' content='IE=edge')
+      title #{title}
+      //-favicon
+      include ../modules/head
+      link(href='css/style.css' rel='stylesheet')
+      //-link(rel='preload' href='fonts/open-sans/opensanslight.woff2' as='font'  crossorigin='anonymous')
+      //-link(rel='preload' href='fonts/open-sans/opensans.woff2' as='font' crossorigin='anonymous')
+      //-link(rel='preload' href='fonts/open-sans/opensansbold.woff2' as='font' crossorigin='anonymous')
+      block links
+  body.page__inner
+    //-header.page-header
+      //-include ../modules/nav
+    main.page__content
+      block content
+    //-footer.page__footer-wrapper
+
+    //-script(src='js/vendors~index~page.js')
+    script(src='js/app.js')
+    block scripts

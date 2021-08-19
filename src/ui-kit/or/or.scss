@@ -1,0 +1,22 @@
+// В этом файле должны быть стили для БЭМ-блока or, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+
+.or {
+  display: flex;
+  align-items: center;
+
+  &:before,
+  &:after {
+    content: '';
+    flex-grow: 1;
+    height: 1px;
+    background-color: $gray-light;
+  }
+
+  &__inner {
+    font-size: $font-size-sm;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    color: $gray-light;
+  }
+}

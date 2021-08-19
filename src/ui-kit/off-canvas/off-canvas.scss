@@ -1,0 +1,99 @@
+// В этом файле должны быть стили для БЭМ-блока off-canvas, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+
+$off-canvas-width: 250px !default; // ширина этого блока
+
+.off-canvas {
+  $block-name: &; // #{$block-name}__element
+
+  position: relative;
+  overflow: hidden;
+
+  .js &--open {
+    #{$block-name}__overlay {
+      position: fixed;
+      visibility: visible;
+      z-index: 1;
+      opacity: 1;
+      transition: opacity $transition-time ease;
+    }
+
+    #{$block-name}__close {
+      visibility: visible;
+      z-index: 1;
+      opacity: 1;
+    }
+
+    #{$block-name}__aside {
+      transform: translateX(0);
+    }
+
+    #{$block-name}__page-content {
+      transform: translateX($off-canvas-width);
+    }
+  }
+
+  &__aside {
+    max-height: 30vh;
+    overflow-y: auto;
+    color: #ffffff;
+    background-color: $gray-darkest;
+    transition: transform $transition-time ease;
+    backface-visibility: hidden;
+
+    .js & {
+      position: fixed;
+      width: $off-canvas-width;
+      height: 100%;
+      max-height: none;
+      z-index: 2;
+      transform: translateX(($off-canvas-width * -1));
+    }
+  }
+
+  &__menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__menu-item {
+    &--separator {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid $gray;
+    }
+  }
+
+  &__menu-link {
+    display: block;
+    line-height: 1.2;
+    padding: 8px 14px;
+    text-decoration: none;
+    color: inherit;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: inherit;
+      background-color: $gray-darker;
+    }
+  }
+
+  &__page-content {
+    transition: transform $transition-time ease;
+    backface-visibility: hidden;
+  }
+
+  &__overlay {
+    position: absolute;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.2);
+  }
+}

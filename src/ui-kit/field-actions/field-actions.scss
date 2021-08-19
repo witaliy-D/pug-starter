@@ -1,0 +1,17 @@
+// В этом файле должны быть стили для БЭМ-блока field-actions, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+
+.field-actions {
+  display: block;
+  margin-top: $typo-margin-vertical;
+  margin-bottom: $typo-margin-vertical;
+
+  &__text {
+    display: block;
+    font-size: $font-size-sm;
+    line-height: 1.2em;
+    margin-top: $typo-margin-vertical;
+    margin-bottom: $typo-margin-vertical;
+    color: $text-color-muted;
+  }
+}

@@ -1,0 +1,64 @@
+// В этом файле должны быть стили для БЭМ-блока card, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+
+.card {
+  $block-name: &; // #{$block-name}__element
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 200px;
+  margin-bottom: 30px;
+  padding: 0 15px;
+  z-index: 0;
+
+  &__inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  &__img-wrap {
+    display: block;
+    flex-shrink: 0;
+    margin-bottom: 20px;
+  }
+
+  &__img {
+    display: block;
+  }
+
+  &__title {
+    margin: 0 0 20px;
+  }
+
+  &__new {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    line-height: 1;
+    font-weight: 700;
+    padding: 5px 10px;
+    z-index: 1;
+    color: #ffffff;
+    background: $color-success;
+    transform: translateX(-50%) rotate(-10deg);
+  }
+
+  &__price {
+    flex-shrink: 0;
+    font-size: $font-size-h3;
+    line-height: 1;
+    font-weight: 700;
+    margin: auto 0 0;
+  }
+
+  &__buy {
+    flex-shrink: 0;
+  }
+}

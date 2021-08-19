@@ -1,0 +1,64 @@
+// В этом файле должны быть стили для БЭМ-блока close, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+
+.close {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  line-height: 30px;
+  padding: 0;
+  z-index: 1;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+
+  span {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: $toggler-part-height;
+    font-size: 0;
+    vertical-align: middle;
+    color: transparent;
+    background: transparent;
+
+    &:before,
+    &:after {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: $toggler-part-height;
+      background: $toggler-part-bg-color;
+      transform-origin: 50% 50%;
+    }
+
+    &:before {
+      transform: rotate3d(0, 0, 1, 45deg);
+    }
+
+    &:after {
+      transform: rotate3d(0, 0, 1, -45deg);
+    }
+  }
+
+  // &--sm {
+
+  //   $toggler-part-height:     1px;
+
+  //   width: 30px;
+  //   line-height: 30px;
+
+  //   span {
+  //     width: 60%;
+
+  //     &:before,
+  //     &:after {
+  //       height: $toggler-part-height;
+  //       background: $toggler-part-bg-color;
+  //     }
+  //   }
+  // }
+}

@@ -1,0 +1,49 @@
+mixin svg(url, id)
+
+  if id
+    svg()&attributes(attributes)
+      use(xlink:href= url + '#' + id)
+  else
+    svg()&attributes(attributes)
+      use(xlink:href= url)
+
+mixin picture(props)
+
+  -
+    var screenMd = '768px';
+    var screenLg = '992px';
+    var screenXl = '1200px';
+
+  picture
+    if props.imgxlwebp && props.imgxl2xwebp
+      source(media=`(min-width: ${screenXl})`, type='image/webp', srcset=`${props.imgxl2xwebp} 2x, ${props.imgxlwebp} 1x`)
+    if props.imgxl && props.imgxl2x
+      source(media=`(min-width: ${screenXl})`, srcset=`${props.imgxl2x} 2x, ${props.imgxl} 1x`)
+    if props.imglgwebp && props.imglg2xwebp
+      source(media=`(min-width: ${screenLg})`, type='image/webp', srcset=`${props.imglg2xwebp} 2x, ${props.imglgwebp} 1x`)
+    if props.imglg && props.imglg2x
+      source(media=`(min-width: ${screenLg})`, srcset=`${props.imglg2x} 2x, ${props.imglg} 1x`)
+    if props.imgmdwebp && props.imgmd2xwebp
+      source(media=`(min-width: ${screenMd})`, type='image/webp', srcset=`${props.imgmd2xwebp} 2x, ${props.imgmdwebp} 1x`)
+    if props.imgmd && props.imgmd2x
+      source(media=`(min-width: ${screenMd})`, srcset=`${props.imgmd2x} 2x, ${props.imgmd} 1x`)
+    if props.imgwebp && props.img2xwebp
+      source(type='image/webp', srcset=`${props.img2xwebp} 2x, ${props.imgwebp} 1x`)
+    if props.img && props.img2x
+      source(media='(min-width: 320px)', srcset=`${props.img2x} 2x, ${props.img} 1x`)
+    if props.imgxlwebp
+      source(media=`(min-width: ${screenXl})`, type='image/webp', srcset=`${props.imgxlwebp}`)
+    if props.imgxl
+      source(media=`(min-width: ${screenXl})`, srcset=`${props.imgxl}`)
+    if props.imglgwebp
+      source(media=`(min-width: ${screenLg})`, type='image/webp', srcset=`${props.imglgwebp}`)
+    if props.imglg
+      source(media=`(min-width: ${screenLg})`, srcset=`${props.imglg}`)
+    if props.imgmdwebp
+      source(media=`(min-width: ${screenMd})`, type='image/webp', srcset=`${props.imgmdwebp}`)
+    if props.imgmd
+      source(media=`(min-width: ${screenMd})`, srcset=`${props.imgmd}`)
+    if props.imgwebp
+      source(type='image/webp', srcset=`${props.imgwebp}`)
+
+    img(src=props.img, alt=props.alt)

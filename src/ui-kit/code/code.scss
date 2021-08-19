@@ -1,0 +1,31 @@
+// В этом файле должны быть стили для БЭМ-блока code, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+
+.code {
+  display: block;
+  width: 100%;
+  max-height: 500px;
+  overflow-x: auto;
+  margin-top: $typo-margin-vertical;
+  margin-bottom: $typo-margin-vertical;
+  padding: 0.5em 1em;
+  white-space: normal;
+  tab-size: 2;
+  background-color: $gray-lightest;
+  border: 1px solid $gray-lighter;
+  border-radius: $border-radius;
+
+  code {
+    display: block;
+    min-height: 1em;
+    padding: 0;
+    white-space: pre;
+    background-color: transparent;
+
+    p,
+    div {
+      display: inline-block;
+      margin: 0;
+    }
+  }
+}

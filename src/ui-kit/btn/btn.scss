@@ -1,0 +1,83 @@
+// В этом файле должны быть стили для БЭМ-блока btn, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+
+.btn {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  font-family: inherit;
+  font-size: 1em;
+  line-height: $line-height;
+  margin: 0;
+  padding: $field-padding-vertical $field-padding-horizontal;
+  box-sizing: border-box;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-decoration: none;
+  text-transform: none;
+  text-overflow: ellipsis;
+  color: $text-color;
+  background-color: $gray-lightest;
+  background-image: none;
+  // border: 1px solid $gray-lighter;
+  border: 0;
+  border-radius: $border-radius;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: $text-color;
+    background-color: darken($gray-lightest, 10%);
+    // border-color: darken($gray-lighter, 12%);
+  }
+
+  // &:visited {
+  //   color: $text-color;
+  // }
+
+  &:active,
+  &:focus {
+    @include field-focus;
+  }
+
+  &--disabled,
+  &:disabled {
+    opacity: $opacity;
+    color: $text-color;
+    background-color: $gray-lightest;
+    cursor: not-allowed;
+    // border-color: $gray-lighter;
+
+    @at-root a.btn--disabled {
+      pointer-events: none;
+    }
+  }
+
+  // &__icon {
+  //   display: inline-block;
+  //   vertical-align: middle;
+  // }
+
+  // &--main {
+  //   color: #fff;
+  //   background-color: $color-main;
+  //   // border: 1px solid $color-main;
+
+  //   &:hover,
+  //   &:focus {
+  //     color: #fff;
+  //     background-color: darken($color-main, 10%);
+  //     // border-color: darken($color-main, 12%);
+  //   }
+
+  //   &--disabled,
+  //   &:disabled {
+  //     color: #fff;
+  //     background-color: $color-main;
+  //     // border-color: $color-main;
+  //   }
+  // }
+}

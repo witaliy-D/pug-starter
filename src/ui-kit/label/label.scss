@@ -1,0 +1,35 @@
+// В этом файле должны быть стили для БЭМ-блока label, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+
+.label {
+  position: relative;
+  display: inline-block;
+  font-size: $font-size-sm;
+  line-height: 1;
+  font-weight: 700;
+  margin: 0 0.1em;
+  padding: 0.25em 0.4em 0.2em;
+  vertical-align: baseline;
+  white-space: nowrap;
+  text-decoration: none;
+  text-transform: none;
+  color: $text-color;
+  background-color: $gray-lightest;
+  border-radius: $border-radius;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: $text-color;
+  }
+
+  // &--main {
+  //   background-color: $color-main;
+  //   color: #fff;
+
+  //   &:hover,
+  //   &:focus {
+  //     color: #fff;
+  //   }
+  // }
+}
