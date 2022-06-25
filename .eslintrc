@@ -1,4 +1,4 @@
-parser: "babel-eslint"
+parser: "@babel/eslint-parser"
 env:
     es6: true
     browser: true
@@ -170,3 +170,5 @@ rules:
     wrap-iife: 0
     wrap-regex: 0
     yoda: [2, 'never']
+ignorePatterns: ['dist/js/'
+]

@@ -1,15 +1,16 @@
 {
-  "syntax": "scss",
-   "extends": [
-     "stylelint-config-prettier"
-   ],
+  "extends": [
+    "stylelint-config-recommended-scss",
+    "stylelint-config-prettier"
+  ],
   "defaultSeverity": "error",
   "ignoreFiles": [
     "./src/scss/style.scss",
-     "./src/scss/helpers/mixins/smart-grid-mixins.scss"
+    "./src/scss/helpers/mixins/smart-grid-mixins.scss",
+    "./src/ui-kit/**/*.scss",
+    "./src/scss/base/sprite.scss"
   ],
   "plugins": [
-    "stylelint-scss",
     "stylelint-prettier",
     "stylelint-selector-bem-pattern",
     "stylelint-order"
@@ -46,8 +47,6 @@
       }
     ],
     "prettier/prettier": true,
-    "at-rule-no-unknown": null,
-    "scss/at-rule-no-unknown": true,
     "at-rule-empty-line-before": [
       "always",
       {
@@ -100,9 +99,11 @@
       }
     ],
     "at-rule-disallowed-list": [
-      ["extend"],
+      [
+        "extend"
+      ],
       {
-      "message": "это @-правило в чёрном списке"
+        "message": "это @-правило в чёрном списке"
       }
     ],
     "block-closing-brace-empty-line-before": [
@@ -229,15 +230,24 @@
     ],
     "declaration-property-unit-disallowed-list": [
       {
-        "font-size": ["pt"],
-        "/^animation/": ["ms"]
+        "font-size": [
+          "pt"
+        ],
+        "/^animation/": [
+          "ms"
+        ]
       },
       {
         "message": "Для этого свойства данные единицы измерения в чёрном списке"
       }
     ],
     "unit-disallowed-list": [
-      ["mm","cm","in","pc"],
+      [
+        "mm",
+        "cm",
+        "in",
+        "pc"
+      ],
       {
         "message": "Эти единицы измерения запрещены"
       }
@@ -336,12 +346,6 @@
         ]
       }
     ],
-    "function-calc-no-invalid": [
-      true,
-      {
-        "message": "недопустимое выражение в calc"
-      }
-    ],
     "function-calc-no-unspaced-operator": [
       true,
       {
@@ -406,12 +410,6 @@
       "never",
       {
         "message": "Не должно быть пробелов на внутренней стороне скобок"
-      }
-    ],
-    "function-url-quotes": [
-      "always",
-      {
-        "message": "url в кавычках"
       }
     ],
     "length-zero-no-unit": [
@@ -573,7 +571,9 @@
       }
     ],
     "property-disallowed-list": [
-      ["text-rendering" ],
+      [
+        "text-rendering"
+      ],
       {
         "message": "Свойство из чёрного списка"
       }
@@ -617,7 +617,7 @@
     "time-min-milliseconds": [
       100,
       {
-      "message": "Время менее 100мс — нет смысла использовать"
+        "message": "Время менее 100мс — нет смысла использовать"
       }
     ],
     "shorthand-property-no-redundant-values": true,
@@ -789,8 +789,6 @@
         "message": "Селектор более чем 3-составной запрещен"
       }
     ],
-
-
     "order/order": [
       "custom-properties",
       {

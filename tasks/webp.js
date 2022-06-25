@@ -1,24 +1,23 @@
-
 import gulp from 'gulp';
 import gulpif from 'gulp-if';
 import imageminWebp from 'imagemin-webp';
-import webp from 'gulp-webp';
+import webpImg from 'gulp-webp';
 import debug from 'gulp-debug';
-import yargs from 'yargs';
-import config from '../config';
 
-const argv = yargs.argv;
-const production = !!argv.production;
+import {config}from '../config.js';
+
+
+const production = !!process.argv.includes('--production');
 
 const dir = config.dir;
 
-gulp.task('webp', () => {
+export const webp = () => {
   return gulp.src(dir.imgs.src)
-    .pipe(webp(gulpif(production, imageminWebp({
+    .pipe(webpImg(gulpif(production, imageminWebp({
       lossless: true,
       quality: 100,
       alphaQuality: 100
     }))))
     .pipe(debug({title: 'webp'}))
     .pipe(gulp.dest(dir.imgs.dist));
-});
+};

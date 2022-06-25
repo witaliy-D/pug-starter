@@ -50,7 +50,7 @@ $body-bg: $white;
 $text-color: $darkblue;
 $text-color-muted: $gray;
 $link-color: $poverblue;
-$link-color--hover: darken($poverblue, 15%);
+$link-color--hover: $poverblue;
 $border-color: $gray;
 
 // Базовая типографика

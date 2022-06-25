@@ -5,24 +5,40 @@ import rename from 'gulp-rename';
 import webstream from 'webpack-stream';
 import webpack from 'webpack';
 import debug from 'gulp-debug';
-import yargs from 'yargs';
-import config from '../config';
+
+import {config}from '../config.js';
 
 const dir = config.dir;
 
-const argv = yargs.argv;
-const production = !!argv.production;
 
-const webpackConfig = require('../webpack.config.js');
-webpackConfig.mode = production ? 'production' : 'development';
-webpackConfig.devtool = production ? false : 'source-map';
+const production = !!process.argv.includes('--production');
 
 
-gulp.task('scripts', () => {
+export const scripts = () => {
   return gulp.src(dir.scripts.src)
     .pipe(plumber())
-    .pipe(webstream(webpackConfig), webpack)
+    .pipe(webstream({
+      mode: production ? 'production' : 'development',
+      devtool: production ? false : 'source-map',
+      entry: {
+        app: './src/js/app.js'
+        // index: './src/js/pageEntry/index.js'
+        // page: './srs/js/pageEntry/page.js'
+      },
+      output: {
+        filename: '[name].js'
+      },
+      module: {
+        rules: [
+          {
+            test: /\.js$/,
+            exclude: /node_modules/,
+            loader: 'babel-loader'
+          }
+        ]
+      }
+    }, webpack))
     .pipe(gulpif(production, rename({suffix: '.min'})))
     .pipe(debug({title: 'JS '}))
     .pipe(gulp.dest(dir.scripts.dist));
-});
+};

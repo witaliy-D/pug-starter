@@ -1,16 +1,15 @@
-// eslint-disable-next-line no-redeclare
-/* global module */
 
-const config = {
+export const config = {
   dir: {
     dist: 'dist/',
     blocks: 'src/blocks/',
     clean: {
       imgs: [
-        'dist/img/**/*',
+        'dist/img/**/*.{jpg,jpeg,png,svg,gif}',
         '!dist/img/favicons',
         '!dist/img/symbols.svg',
-        '!dist/img/sprite.png'
+        '!dist/img/sprite.png',
+        '!dist/img/sprite.webp'
       ],
       fonts: 'dist/fonts/**/*',
       pages: 'dist/*.html'
@@ -40,10 +39,10 @@ const config = {
     },
     imgs: {
       src: [
-        'src/img/*',
-        '!src/img/sprite',
-        '!src/img/symbols',
-        '!src/img/favicon'
+        'src/img/**/*.{jpg,jpeg,png,svg,gif}',
+        '!src/img/sprite/*',
+        '!src/img/symbols/*',
+        '!src/img/favicon/*'
       ],
       dist: 'dist/img/',
       watch: [
@@ -55,6 +54,7 @@ const config = {
     },
     sprite: 'src/img/sprite/*',
     spriteCss: 'src/scss/base/',
+    spriteImg: 'src/img/',
     symbols: 'src/img/symbols/*.svg',
     fonts: 'src/fonts/**/*',
     gzip: 'src/.htaccess',
@@ -66,4 +66,4 @@ const config = {
   }
 };
 
-module.exports = config;
+// module.exports = config;

@@ -1,23 +1,21 @@
-import gulp from 'gulp';
 import del from 'del';
-import config from '../config';
+import {config}from '../config.js';
 
 const dir = config.dir;
 
-gulp.task('clean', () => {
+export const clean = () => {
   return del(dir.dist);
-});
+};
 
-gulp.task('cleanImgs', () => {
+export const cleanImgs = () => {
   return del(dir.clean.imgs);
-});
+};
 
-
-gulp.task('cleanFonts', () => {
+export const cleanFonts = () => {
   return del(dir.clean.fonts);
-});
+};
 
-gulp.task('cleanPages', () => {
+export const cleanPages = () => {
   return del(dir.clean.pages);
-});
+};
 

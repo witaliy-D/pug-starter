@@ -68,29 +68,30 @@ h6 {
   font-weight: 700;
   margin-top: 0;
   margin-bottom: 0.5rem;
+  /* stylelint-disable-next-line value-keyword-case */
   color: currentColor;
 }
 
 //h1 {
 //  font-size: $font-size-h1;
 //}
-//
+
 //h2 {
 //  font-size: $font-size-h2;
 //}
-//
+
 //h3 {
 //  font-size: $font-size-h3;
 //}
-//
+
 //h4 {
 //  font-size: $font-size-h4;
 //}
-//
+
 //h5 {
 //  font-size: $font-size-h5;
 //}
-//
+
 //h6 {
 //  font-size: $font-size-h6;
 //}
@@ -152,6 +153,19 @@ sup {
   font-size: $font-size-sm;
 }
 
+// area,
+// summary,
+a,
+button,
+[role='button'],
+input,
+label,
+select,
+textarea {
+  touch-action: manipulation; // Стилевая коррекция 300ms задержки (для поддерживающих браузеров)
+  margin: 0; // Убираем margin в Firefox и Safari
+}
+
 a {
   color: $link-color;
   background-color: transparent;
@@ -203,7 +217,9 @@ img {
 }
 
 svg {
+  /* stylelint-disable-next-line value-keyword-case */
   fill: currentColor;
+  /* stylelint-disable-next-line value-keyword-case */
   color: currentColor;
 
   a &,
@@ -228,19 +244,6 @@ table {
 // Мы любим Сафари (на самом деле, нет).
 [type='search']::-webkit-search-decoration {
   -webkit-appearance: none; // stylelint-disable-line
-}
-
-// area,
-// summary,
-a,
-button,
-[role='button'],
-input,
-label,
-select,
-textarea {
-  touch-action: manipulation; // Стилевая коррекция 300ms задержки (для поддерживающих браузеров)
-  margin: 0; // Убираем margin в Firefox и Safari
 }
 
 button,
@@ -325,54 +328,54 @@ textarea {
 //::-webkit-input-placeholder {
 //  color: $gray;
 //}
-//
+
 //::-moz-placeholder {
 //  color: $gray;
 //} /* Firefox 19+ */
-//
+
 //:-moz-placeholder {
 //  color: $gray;
 //} /* Firefox 18- */
-//
+
 //:-ms-input-placeholder {
 //  color: $gray;
 //}
-//
+
 //input::-webkit-input-placeholder {
 //  opacity: 1;
 //  transition: opacity $transition-time ease;
 //}
-//
+
 //input::-moz-placeholder {
 //  opacity: 1;
 //  transition: opacity $transition-time ease;
 //}
-//
+
 //input:-moz-placeholder {
 //  opacity: 1;
 //  transition: opacity $transition-time ease;
 //}
-//
+
 //input:-ms-input-placeholder {
 //  opacity: 1;
 //  transition: opacity $transition-time ease;
 //}
-//
+
 //input:focus::-webkit-input-placeholder {
 //  opacity: 0;
 //  transition: opacity $transition-time ease;
 //}
-//
+
 //input:focus::-moz-placeholder {
 //  opacity: 0;
 //  transition: opacity $transition-time ease;
 //}
-//
+
 //input:focus:-moz-placeholder {
 //  opacity: 0;
 //  transition: opacity $transition-time ease;
 //}
-//
+
 //input:focus:-ms-input-placeholder {
 //  opacity: 0;
 //  transition: opacity $transition-time ease;

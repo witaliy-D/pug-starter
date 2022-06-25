@@ -14,6 +14,7 @@ ready(function (){
       const valueStep = input.getAttribute('step') ? Number(input.getAttribute('step')) : 1;
       field.addEventListener('click', function (event){
         if (event.target.classList.contains('field-num__btn') && !input.getAttribute('disabled')) {
+          // eslint-disable-next-line radix
           let num = parseInt(input.value);
           if (isNaN(num)) {num = 0;}
           if (event.target.classList.contains('field-num__btn--plus')) {

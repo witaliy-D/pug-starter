@@ -1,57 +1,36 @@
-import gulp from 'gulp';
 import realFavicon from 'gulp-real-favicon';
-import config from '../config';
+import {config}from '../config.js';
 
 // const fs = require('fs');
 const dir = config.dir;
 const FAVICON_DATA_FILE = 'faviconData.json';
-
-// gulp.task('favicons', () => {
-//   return gulp.src(dir.favicons.src)
-//     .pipe(favicons({
-//       icons: {
-//         appleIcon: false,
-//         favicons: true,
-//         online: false,
-//         appleStartup: false,
-//         android: false,
-//         firefox: false,
-//         yandex: false,
-//         windows: false,
-//         coast: false
-//       }
-//     }))
-//     .pipe(gulp.dest(dir.favicons.dist));
-// });
-
-
-
 
 
 // Generate the icons. This task takes a few seconds to complete.
 // You should run it at least once to create the icons. Then,
 // you should run it whenever RealFaviconGenerator updates its
 // package (see the check-for-favicon-update task below).
-gulp.task('favicons', function (done) {
+
+export const favicons = done => {
   realFavicon.generateFavicon({
     masterPicture: dir.favicons.src,
     dest: dir.favicons.dist,
     iconsPath: '.',
     design: {
-      ios: {
-        pictureAspect: 'backgroundAndMargin',
-        backgroundColor: '#ffffff',
-        margin: '14%',
-        assets: {
-          ios6AndPriorIcons: false,
-          ios7AndLaterIcons: false,
-          precomposedIcons: false,
-          declareOnlyDefaultIcon: true
-        }
-      },
+      // ios: {
+      //   pictureAspect: 'backgroundAndMargin',
+      //   backgroundColor: '#ffffff',
+      //   margin: '14%',
+      //   assets: {
+      //     ios6AndPriorIcons: false,
+      //     ios7AndLaterIcons: false,
+      //     precomposedIcons: false,
+      //     declareOnlyDefaultIcon: true
+      //   }
+      // },
       desktopBrowser: {
         design: 'raw'
-      },
+      }
       // windows: {
       //   pictureAspect: 'whiteSilhouette',
       //   backgroundColor: '#d22856',
@@ -66,22 +45,22 @@ gulp.task('favicons', function (done) {
       //     }
       //   }
       // },
-      androidChrome: {
-        pictureAspect: 'backgroundAndMargin',
-        margin: '17%',
-        backgroundColor: '#ffffff',
-        themeColor: '#ffffff',
-        manifest: {
-          display: 'standalone',
-          orientation: 'notSet',
-          onConflict: 'override',
-          declared: true
-        },
-        assets: {
-          legacyIcon: false,
-          lowResolutionIcons: false
-        }
-      }
+      // androidChrome: {
+      //   pictureAspect: 'backgroundAndMargin',
+      //   margin: '17%',
+      //   backgroundColor: '#ffffff',
+      //   themeColor: '#ffffff',
+      //   manifest: {
+      //     display: 'standalone',
+      //     orientation: 'notSet',
+      //     onConflict: 'override',
+      //     declared: true
+      //   },
+      //   assets: {
+      //     legacyIcon: false,
+      //     lowResolutionIcons: false
+      //   }
+      // }
       // safariPinnedTab: {
       //   pictureAspect: 'silhouette',
       //   themeColor: '#d22856'
@@ -98,7 +77,7 @@ gulp.task('favicons', function (done) {
   }, function () {
     done();
   });
-});
+};
 
 // Inject the favicon markups in your HTML pages. You should run
 // this task whenever you modify a page. You can keep this task

@@ -4,26 +4,27 @@ import plumber from 'gulp-plumber';
 import gulpif from 'gulp-if';
 import sourcemaps from 'gulp-sourcemaps';
 import autoprefixer from 'autoprefixer';
+import postcss from 'gulp-postcss';
 import objectFitImages from 'postcss-object-fit-images';
 import inlineSVG from 'postcss-inline-svg';
 import atImport from 'postcss-import';
-import postcss from 'gulp-postcss';
 import cleancss from 'gulp-clean-css';
 import rename from 'gulp-rename';
 import debug from 'gulp-debug';
 import server from 'browser-sync';
-import yargs from 'yargs';
 import mqpacker from 'postcss-sort-media-queries';
-import webpcss from 'webp-in-css/plugin';
+import webpcss from 'webp-in-css/plugin.js';
+import dartSass from 'sass';
+import gulpSass from 'gulp-sass';
 
-import config from '../config';
+const sass = gulpSass(dartSass);
 
-const sass = require('gulp-sass')(require('sass'));
+import {config}from '../config.js';
 
 const dir = config.dir;
 
-const argv = yargs.argv;
-const production = !!argv.production;
+
+const production = !!process.argv.includes('--production');
 
 const cleancssOption = {
   level: {
@@ -54,7 +55,7 @@ const postCssPlugins = [
 ];
 
 
-gulp.task('scss', () => {
+export const scss = () => {
   const onError = function (err) {
     notify.onError({
       title: 'Error in scss task',
@@ -74,4 +75,4 @@ gulp.task('scss', () => {
     .pipe(debug({title: 'scss'}))
     .pipe(gulp.dest(dir.styles.dist))
     .on('end', server.reload);
-});
+};

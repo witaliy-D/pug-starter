@@ -1,30 +1,35 @@
 import gulp from 'gulp';
-import imagemin from 'gulp-imagemin';
+import imagemin, {mozjpeg, svgo}from 'gulp-imagemin';
 import pngquant from 'imagemin-pngquant';
-import yargs from 'yargs';
 import gulpif from 'gulp-if';
-import config from '../config';
-const argv = yargs.argv;
-const production = !!argv.production;
+import {config}from '../config.js';
+
+const production = !!process.argv.includes('--production');
 
 const dir = config.dir;
 
 const pluginsSvgo = [
-  {removeViewBox: true},
-  {removeTitle: true}
+  {
+    name: 'removeViewBox',
+    active: true
+  },
+  {
+    name: 'removeTitle',
+    active: true
+  }
 ];
 
 const pluginsImagemin = [
-  imagemin.mozjpeg({progressive: true}),
+  mozjpeg({progressive: true}),
   pngquant()
 ];
 
-gulp.task('imgs', () => {
+export const imgs = () => {
   return gulp.src(dir.imgs.src)
-    .pipe(imagemin([imagemin.svgo({plugins: pluginsSvgo})]))
+    .pipe(imagemin([svgo({plugins: pluginsSvgo})]))
     .pipe(gulpif(production, imagemin(pluginsImagemin)))
     .pipe(gulp.dest(dir.imgs.dist));
-});
+};
 
 
 

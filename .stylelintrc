@@ -1,12 +1,11 @@
 {
-  "syntax": "scss",
   "defaultSeverity": "error",
   "ignoreFiles": [
     "./src/scss/style.scss",
-    "./src/scss/helpers/mixins/smart-grid-mixins.scss"
+    "./src/scss/helpers/mixins/smart-grid-mixins.scss",
+    "./src/scss/base/sprite.scss"
   ],
   "plugins": [
-    "stylelint-scss",
     "stylelint-selector-bem-pattern"
   ],
   "rules": {
@@ -40,8 +39,6 @@
         "message": "Селектор не из имени файла или БЭМ-ошибка"
       }
     ],
-    "at-rule-no-unknown": null,
-    "scss/at-rule-no-unknown": true,
     "at-rule-no-vendor-prefix": [
       true,
       {
@@ -55,9 +52,11 @@
       }
     ],
     "at-rule-disallowed-list": [
-      ["extend"],
+      [
+        "extend"
+      ],
       {
-      "message": "это @-правило в чёрном списке"
+        "message": "это @-правило в чёрном списке"
       }
     ],
     "block-no-empty": [
@@ -106,15 +105,24 @@
     ],
     "declaration-property-unit-disallowed-list": [
       {
-        "font-size": ["pt"],
-        "/^animation/": ["ms"]
+        "font-size": [
+          "pt"
+        ],
+        "/^animation/": [
+          "ms"
+        ]
       },
       {
         "message": "Для этого свойства данные единицы измерения в чёрном списке"
       }
     ],
     "unit-disallowed-list": [
-      ["mm","cm","in","pc"],
+      [
+        "mm",
+        "cm",
+        "in",
+        "pc"
+      ],
       {
         "message": "Эти единицы измерения запрещены"
       }
@@ -181,12 +189,6 @@
         ]
       }
     ],
-    "function-calc-no-invalid": [
-      true,
-      {
-        "message": "недопустимое выражение в calc"
-      }
-    ],
     "function-calc-no-unspaced-operator": [
       true,
       {
@@ -203,13 +205,6 @@
       0,
       {
         "message": "Пустых строк не должно быть в функциях"
-      }
-    ],
-
-    "function-url-quotes": [
-      "always",
-      {
-        "message": "url в кавычках"
       }
     ],
     "max-nesting-depth": [
@@ -281,7 +276,9 @@
       }
     ],
     "property-disallowed-list": [
-      ["text-rendering" ],
+      [
+        "text-rendering"
+      ],
       {
         "message": "Свойство из чёрного списка"
       }
@@ -301,7 +298,7 @@
     "time-min-milliseconds": [
       100,
       {
-      "message": "Время менее 100мс — нет смысла использовать"
+        "message": "Время менее 100мс — нет смысла использовать"
       }
     ],
     "shorthand-property-no-redundant-values": true,

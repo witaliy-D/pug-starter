@@ -1,19 +1,18 @@
 import gulp from 'gulp';
 import plumber from 'gulp-plumber';
-import pug from 'gulp-pug';
+import pugItem from 'gulp-pug';
 import prettyHtml from 'gulp-pretty-html';
 import gulpif from 'gulp-if';
 import replace from 'gulp-replace';
 import debug from 'gulp-debug';
-import yargs from 'yargs';
 import pugLinter from 'gulp-pug-linter';
 import notify from 'gulp-notify';
-import config from '../config';
+
+import {config}from '../config.js';
 
 const dir = config.dir;
 
-const argv = yargs.argv;
-const production = !!argv.production;
+const production = !!process.argv.includes('--production');
 
 const prettyOption = {
   // eslint-disable-next-line camelcase
@@ -25,7 +24,7 @@ const prettyOption = {
   content_unformatted: []
 };
 
-gulp.task('pug', () => {
+export const pug = () => {
   const onError = function (err) {
     notify.onError({
       title: 'Error in pug task',
@@ -36,15 +35,15 @@ gulp.task('pug', () => {
   };
   return gulp.src(dir.pages)
     .pipe(plumber({errorHandler: onError}))
-    .pipe(pug())
+    .pipe(pugItem())
     .pipe(prettyHtml(prettyOption))
     .pipe(gulpif(production, replace('.css', '.min.css')))
     .pipe(gulpif(production, replace('.js', '.min.js')))
     .pipe(debug({title: 'pug'}))
     .pipe(gulp.dest(dir.dist));
-});
+};
 
-gulp.task('pugFast', () => {
+export const pugFast = () => {
   const onError = function (err) {
     notify.onError({
       title: 'Error in pug task',
@@ -60,11 +59,10 @@ gulp.task('pugFast', () => {
     .pipe(gulpif(production, replace('.css', '.min.css')))
     .pipe(gulpif(production, replace('.js', '.min.js')))
     .pipe(debug({title: 'pug'}))
-    .pipe(gulp.dest('dist'));
-});
+    .pipe(gulp.dest(dir.dist));
+};
 
-gulp.task('pugLint', () => (
-  gulp
-    .src('src/**/*.pug')
+export const pugLint = () => (
+  gulp.src('src/**/*.pug')
     .pipe(pugLinter({reporter: 'default'}))
-));
+);

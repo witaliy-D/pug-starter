@@ -1,4 +1,3 @@
-import gulp from 'gulp';
 import fs from 'fs';
 
 // Сообщение для компилируемых файлов
@@ -33,7 +32,7 @@ function getDirectories(ext) {
     .filter(item => fileExist(source + item + '/' + item + '.' + ext));
 }
 
-gulp.task('writePugMixinsFile', cb => {
+export const writePugMixinsFile = cb => {
   const allBlocksWithPugFiles = getDirectories('pug');
   let pugMixins = '//-' + doNotEditMsg.replace(/\n /gm, '\n  ');
   allBlocksWithPugFiles.forEach(function (blockName) {
@@ -42,10 +41,10 @@ gulp.task('writePugMixinsFile', cb => {
   fs.writeFileSync('src/pug/helpers/blocks-mixins.pug', pugMixins);
   console.log('---------- Write new blocks-mixins.pug');
   cb();
-});
+};
 
 
-gulp.task('writeSassImportsFile', cb => {
+export const writeSassImportsFile = cb => {
   const allBlocksWithScssFiles = getDirectories('scss');
   let styleImports = `/* !*${doNotEditMsg.replace(/\n /gm, '\n * ').replace(/\n\n$/, '\n */\n\n')}`;
   allBlocksWithScssFiles.forEach(function (blockName) {
@@ -54,6 +53,6 @@ gulp.task('writeSassImportsFile', cb => {
   fs.writeFileSync('src/scss/helpers/blocks-mixins.scss', styleImports);
   console.log('---------- Write new blocks-mixins.scss');
   cb();
-});
+};
 
 
